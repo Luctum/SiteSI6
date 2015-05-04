@@ -1,9 +1,11 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/SITEBOUSILLE/models/model.php';
+
 class Article extends Modele{
 
 	public function afficheConnaissance(){ // Vérifie si une recherche à été effectuée, sinon affiche toutes les connaissances.
-		$db = getBdd();
+
+        $db = $this->getBdd();
 		if(isset($_GET['search'])){
 			$recherche = $_GET['search'];
 			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
@@ -22,10 +24,10 @@ class Article extends Modele{
 		$ex = $db->query($requete);
 		return $ex;
 	}
+
 	public function envoieConnaissance($auteur,$titre,$texte){ //Permet l'envoie des connaissances sur le serveur.
 		$db = new PDO('mysql:host=localhost;dbname=cognitio','root','');
 		$requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
-		$ex = $db->query($requete);
 		return $ex;
 	}
 	

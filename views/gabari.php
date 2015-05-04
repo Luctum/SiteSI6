@@ -16,7 +16,7 @@
 			<?= $header ?>
 		</header>
 
-<?= $contenu ?> <!-- Affiche le contenu du site -->
+            <?= $contenu ?> <!-- Affiche le contenu du site -->
 		<footer>
 			<div class="fcol">
 			<h3>Qui sommes nous ?</h3>

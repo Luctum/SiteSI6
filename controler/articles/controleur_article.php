@@ -14,7 +14,6 @@ class ControleurArticle {
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/views/contenu/articles/vue_article.php';
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/views/gabari.php';
 
-
   }
 }
 ?>

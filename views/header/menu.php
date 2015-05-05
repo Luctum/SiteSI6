@@ -22,7 +22,7 @@
 				<input class="search"type="text" name="search" placeholder="Rechercher sur Cognitio...">
 				<input type="submit">
 			</form>
-		<a class="a_menu2" href="connexion.php">Se connecter</a>		
+		<a class="a_menu2" href="/SITEBOUSILLE/controler/connexion/controleur_connexion_clique.php">Se connecter</a>
 	<?php } 
 
 $menu = ob_get_clean();	?>

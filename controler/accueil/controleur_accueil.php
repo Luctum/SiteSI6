@@ -16,7 +16,5 @@ class ControleurAccueil {
   	require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/views/contenu/vue_accueil.php';
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/views/gabari.php';		
   }
-    
 }
-
 ?>

@@ -1,14 +1,14 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/SITEBOUSILLE/models/utilisateur.php';
 
-class formConnexion {
+class formInscription {
 
     private $user;
     public function __construct(){
         $this->user = new Utilisateur();
     }
 
-    public function connexion($login, $password){
+    public function inscription($login, $password){
         session_start();
         $row = $this->user->getUser($login,$password);
         $_SESSION['pseudo'] = $row['pseudo'];

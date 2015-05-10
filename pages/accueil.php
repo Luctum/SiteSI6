@@ -1,7 +1,6 @@
-﻿<?php session_start(); ?>
+<?php session_start(); ?>
 <!-- Hugo PALLA SIO1  Si6 -->
 <!DOCTYPE html>
-
 <html>
 <head>
 	<title>Cognitio - Partagez vos connaissances</title>

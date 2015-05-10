@@ -11,8 +11,10 @@ class Utilisateur extends Modele{
         return $ex;
     }
 
-    function setUser(){
+    function setUser($pseudo, $login, $password, $mail){
+        $requete = "INSERT INTO utilisateur SET pseudo='$pseudo' , login ='$login', password='$password', mail='$mail', codeNiveauSecurite=1, avatar='http://image.noelshack.com/fichiers/2015/13/1427481769-dot100.gif' ";
+        $ex = $this->getBdd()->query($requete);
+        $ex = $ex->fetch();
     }
 }
-
 ?>

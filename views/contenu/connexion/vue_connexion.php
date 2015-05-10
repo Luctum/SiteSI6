@@ -8,7 +8,7 @@
                     Password : <input type="password" name="password"></input><br/>
                     <input type="submit"></input>
                 </form>
-                <p>Pas de compte ? <a href="inscription.php">Inscrivez vous !</a></p>
+                <p>Pas de compte ? <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>SITEBOUSILLE/controler/inscription/controleur_inscription_clique.php">Inscrivez vous !</a></p>
         </div>
     </article>
 

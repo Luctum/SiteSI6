@@ -40,8 +40,7 @@ $rows = $ex->fetchAll(PDO::FETCH_ASSOC);
 		    	<br/>
 	    	<?php
 			}
-			?> 
-
+			?>
 		</div>
 			<?php			
 				foreach ($rows as $row) { ?>

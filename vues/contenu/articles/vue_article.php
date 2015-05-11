@@ -8,7 +8,7 @@
 			foreach ($rows as $row) { ?>
 
 			<div class="liste_article">
-				<h4><a class="yletter" href="affichage.php?id=<?=$row['codePostConnaissance']?>"><?= $row['titre']?></a></h4>
+				<h4><a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_affichage_clique.php?id=<?=$row['codePostConnaissance']?>"><?= $row['titre']?></a></h4>
 				<h5>Ecrit par : <?= $row['pseudo']?></h5>
 				<p><?= substr($row['texte'],0,85)?>...</p>
 			</div>

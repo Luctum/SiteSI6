@@ -5,7 +5,7 @@
 	<head>
 		<title>Cognitio - Partagez vos connaissances</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/style/style.css">
+		<link rel="stylesheet" type="text/css" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/styles/style.css">
 	</head>
 	<body>
 		<nav>

@@ -1,0 +1,75 @@
+/* Milieu Accueil*/
+.accueil_corps {text-align: center;}
+.corps{
+
+	border-top: solid 7px #818B8E;
+	border-bottom: solid 7px #818B8E;
+	background-color: #e2e4e5;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-top: 4%;
+	margin-bottom: 5%;
+}
+
+
+
+/* Selection Article*/
+
+.corps_article{
+	border-right: solid 7px #818B8E;
+	border-left: solid 7px #818B8E;
+	background-color: #e2e4e5;
+	padding: 1%;
+	width:65%;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 650px;
+	text-align: justify;
+}
+
+.liste_article{
+	border: 1px #818B8E solid;
+	background-color: #FAFAFA;
+	padding: 0;
+	padding: 2px;
+	margin-bottom: 5px;
+	width: 24%;
+	min-height:140px;
+	display: inline-block;
+	border-radius: 10px;
+	vertical-align: middle;  /*Permet d'aligner à la même hauteur plusieurs blocs */
+}
+
+
+.liste_article h5, .liste_article h4, .liste_article p{
+	margin: 2px;
+}
+
+/* Lecture Article*/
+
+.auteur_article{
+	float: right;
+	width: 13%;
+	padding-left: 1%;
+	margin-bottom:1%;
+	margin-left:3%;
+	margin-top: 9.5%;
+	border-left: 3px grey solid;
+
+}
+
+.auteur_article p{
+	margin: 2px;
+}
+
+.corps_article h2{
+	border-bottom: 1px grey solid;
+}
+
+/* Formulaires */
+.champtexte{
+	width: 50%;
+	height: 200px;
+	horizontal-align: center;
+
+}

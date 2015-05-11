@@ -12,7 +12,7 @@
 			</form>
 		<a class="a_menu2" href="#">Mon Profil <span class="yletter">(<?= $_SESSION['pseudo']?>)<span></a>		
 	<?php } 
-	else{ ?>			
+	else{ ?>
 		<a href= '<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/index.php'><h1 class="logo"><span class="logo_yletter">C</span>ognitio</h1></a>
 			<span class="menu">
 				<a class="a_menu" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controler/articles/controleur_article_clique.php">Connaissances</a>

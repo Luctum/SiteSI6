@@ -6,7 +6,7 @@
 				<a class="a_menu" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controler/articles/controleur_article_clique.php">Connaissances</a>
 				<a class="a_menu" href="selection.php">Annonces</a>
 			</span>
-			<form method="GET" class="recherche" action="selection.php">
+			<form method="GET" class="recherche" action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controler/articles/controleur_article_clique.php">
 				<input class="search"type="text" name="search" placeholder="Rechercher sur Cognitio...">
 				<input type="submit">
 			</form>
@@ -18,11 +18,11 @@
 				<a class="a_menu" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controler/articles/controleur_article_clique.php">Connaissances</a>
 				<a class="a_menu" href="selection.php">Annonces</a>
 			</span>
-			<form method="GET" class="recherche" action="selection.php">
+			<form method="GET" class="recherche" action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controler/articles/controleur_article_clique.php">
 				<input class="search"type="text" name="search" placeholder="Rechercher sur Cognitio...">
 				<input type="submit">
 			</form>
-		<a class="a_menu2" href="/SITEBOUSILLE/controler/connexion/controleur_connexion_clique.php">Se connecter</a>
+		<a class="a_menu2" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controler/connexion/controleur_connexion_clique.php">Se connecter</a>
 	<?php } 
 
 $menu = ob_get_clean();	?>

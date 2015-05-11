@@ -12,9 +12,9 @@ class Utilisateur extends Modele{
     }
 
     function setUser($pseudo, $login, $password, $mail){
+        $password = md5($password);
         $requete = "INSERT INTO utilisateur SET pseudo='$pseudo' , login ='$login', password='$password', mail='$mail', codeNiveauSecurite=1, avatar='http://image.noelshack.com/fichiers/2015/13/1427481769-dot100.gif' ";
         $ex = $this->getBdd()->query($requete);
-        $ex = $ex->fetch();
     }
 }
 ?>

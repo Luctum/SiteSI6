@@ -2,7 +2,7 @@
 
 class ControleurInscription {
 
-    public function afficheInscription() {
+    public function afficheInscription(){
         session_start();
 
         require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/views/header/menu.php';   // Le test se trouve dans la vue

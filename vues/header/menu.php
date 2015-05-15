@@ -10,7 +10,7 @@
 				<input class="search"type="text" name="search" placeholder="Rechercher sur Cognitio...">
 				<input type="submit">
 			</form>
-		<a class="a_menu2" href="#">Mon Profil <span class="yletter">(<?= $_SESSION['pseudo']?>)<span></a>
+		<a class="a_menu2" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/profil/controleur_profil_clique.php">Mon Profil <span class="yletter">(<?= $_SESSION['pseudo']?>)<span></a>
 	<?php }
 	else{ ?>
 		<a href= '<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/index.php'><h1 class="logo"><span class="logo_yletter">C</span>ognitio</h1></a>

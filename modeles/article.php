@@ -41,5 +41,11 @@ class Article extends Modele{
         $ex = $db->query($requete);
         return $ex;
     }
+
+    public function setArticle($texte, $auteur, $titre){
+        $db = $this->getBdd();
+        $requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
+        $ex = $db->query($requete);
+    }
 }
 ?>

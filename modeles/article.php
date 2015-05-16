@@ -6,15 +6,23 @@ class Article extends Modele{
 	public function afficheConnaissance(){ // Vérifie si une recherche à été effectuée, sinon affiche toutes les connaissances.
         $db = $this->getBdd();
 
-		if(isset($_GET['search'])){
-			$recherche = $_GET['search'];
+        if(isset($_GET['search'])){
+            $recherche = $_GET['search'];
 			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
 			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme FROM postconnaissance
 			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
 			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
 			WHERE texte LIKE '%$recherche%'
 			OR titre LIKE '%$recherche%' ";
-		}
+        }
+        elseif(isset($_GET['theme'])){
+            $recherche = $_GET['theme'];
+			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
+			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme FROM postconnaissance
+			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
+			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
+			WHERE libelleTheme LIKE '%$recherche%'";
+        }
 		else{
 			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
 			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme FROM postconnaissance
@@ -33,7 +41,8 @@ class Article extends Modele{
 
     public function afficheMessageConnaissances(){
         $db = $this->getBdd();
-        $requete = "SELECT nomNiveauSecurite, avatar, texte, pseudo, titre, libelleTheme FROM postconnaissance
+        $requete =
+        "SELECT nomNiveauSecurite, avatar, texte, pseudo, titre, libelleTheme FROM postconnaissance
         INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
         INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
         INNER JOIN niveausecurite on niveausecurite.codeNiveauSecurite = utilisateur.codeNiveauSecurite
@@ -42,9 +51,9 @@ class Article extends Modele{
         return $ex;
     }
 
-    public function setArticle($texte, $auteur, $titre){
+    public function setArticle($texte, $auteur, $titre, $theme){
         $db = $this->getBdd();
-        $requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
+        $requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=(SELECT codeTheme from theme WHERE libelleTheme = '$theme') ";
         $ex = $db->query($requete);
     }
 }

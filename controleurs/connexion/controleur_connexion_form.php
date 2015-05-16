@@ -14,6 +14,7 @@ class formConnexion {
         $_SESSION['pseudo'] = $row['pseudo'];
 		$_SESSION['avatar'] = $row['avatar'];
 		$_SESSION['login'] = $row['login'];
+        $_SESSION['securite'] = $row['codeNiveauSecurite'];
 		$_SESSION['userid'] = $row['codeUtilisateur'];
         header ("Location:  /SITEBOUSILLE ");
     }

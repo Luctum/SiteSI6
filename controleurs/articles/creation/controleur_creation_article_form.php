@@ -8,8 +8,8 @@ class formCreationArticle {
         $this->article = new Article();
     }
 
-    public function creation($auteur, $texte, $titre){
-        $this->article->setArticle($texte, $auteur, $titre);
+    public function creation($auteur, $texte, $titre, $theme){
+        $this->article->setArticle($texte, $auteur, $titre, $theme);
     header ("Location:  /SITEBOUSILLE/controleurs/articles/controleur_article_clique.php ");
     }
 }

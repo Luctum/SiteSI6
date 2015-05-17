@@ -6,7 +6,14 @@ class ControleurAfficheArticle {
 
   	session_start();
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/menu.php';
-    require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerArticle.php';
+
+    if(isset($_SESSION['login'])){
+            require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerC.php';
+        }
+        else{
+            require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerNC.php';
+        }
+
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/modeles/article.php';
     $articles = new Article();
     $ex = $articles->afficheMessageConnaissances();

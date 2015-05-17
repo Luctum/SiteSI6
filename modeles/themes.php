@@ -10,5 +10,8 @@ class Theme extends Modele{
         $themes = $db->query($requete);
         return $themes;
     }
+
+    public function setTheme(){
+    }
 }
 ?>

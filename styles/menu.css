@@ -1,67 +1,73 @@
 nav{
-	width: 90%;
-	background-image: url("../img/bg/zoli.jpg");
-	background-color: #1d363c;
-	margin: 0px;
-	padding-bottom: 12px;
-	padding-left:10%;
+    width: 90%;
+    background-image: url("../img/bg/zoli.jpg");
+    background-color: #1d363c;
+    margin: 0px;
+    padding-bottom: 12px;
+    padding-left:10%;
 
 
 }
 
 .a_menu{
-	color: white;
-	text-decoration: none;
-	transition-property: color;
-  	transition-duration: 0.2s;
-  	transition-timing-function: linear;
-  	margin-right: 3%;
+    color: white;
+    text-decoration: none;
+    transition-property: color;
+      transition-duration: 0.2s;
+      transition-timing-function: linear;
+      margin-right: 3%;
 }
 .a_menu:hover{
-	color:  #c29b67;
+    color:  #c29b67;
   }
 
 /*La même pour le bouton profil */
  .a_menu2{
-	color: white;
-	text-decoration: none;
-	transition-property: color;
-  	transition-duration: 0.2s;
-  	transition-timing-function: linear;
-  	margin-right: 3%;
-  	margin-left: 5%;
+    color: white;
+    text-decoration: none;
+    transition-property: color;
+      transition-duration: 0.2s;
+      transition-timing-function: linear;
+      margin-right: 3%;
+      margin-left: 5%;
 }
 .a_menu2:hover{
-	color:  #c29b67;
+    color:  #c29b67;
   }
 
 .recherche{
-	display: inline;
+    display: inline;
 }
 
 .recherche input{
-	margin: 0;
+    margin: 0;
 }
 
 .logo{
-	display: inline;
-	color: white;
-	font-family: 'Dancing Script', cursive;
-	font-size: 32px;
-	margin-right: 5%;
+    display: inline;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    margin-right: 5%;
 }
-	.logo_yletter{
-		color: #ffc343;
-		font-size: 34px;
-	}
+    .logo_yletter{
+        color: #ffc343;
+        font-size: 34px;
+    }
 
 .search{
 
-	margin-right: 3%;
-	margin-left: 7%;
-	border-radius: 10px;
-	width: 35%;
-	color: #213d44;
-	font-family: 'Open Sans', sans-serif;
-	border: 3px solid #213d44;
+    margin-right: 3%;
+    margin-left: 7%;
+    border-radius: 10px;
+    width: 35%;
+    color: #213d44;
+    font-family: 'Open Sans', sans-serif;
+    border: 3px solid #213d44;
+}
+
+/* Menu d'édition article*/
+
+.menu{
+
 }

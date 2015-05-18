@@ -3,41 +3,41 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/SITEBOUSILLE/modeles/model.php';
 
 class Article extends Modele{
 
-	public function afficheConnaissance(){ // Vérifie si une recherche à été effectuée, sinon affiche toutes les connaissances.
+    public function afficheConnaissance(){ // Vérifie si une recherche à été effectuée, sinon affiche toutes les connaissances.
         $db = $this->getBdd();
 
         if(isset($_GET['search'])){
             $recherche = $_GET['search'];
-			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
-			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
-			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
-			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
-			WHERE texte LIKE '%$recherche%'
-			OR titre LIKE '%$recherche%' ";
+            $requete = ///////////////////////////////////////////////////////////////////////////////////////////
+            "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
+            INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
+            INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
+            WHERE texte LIKE '%$recherche%'
+            OR titre LIKE '%$recherche%' ";
         }
         elseif(isset($_GET['theme'])){
             $recherche = $_GET['theme'];
-			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
-			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
-			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
-			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
-			WHERE libelleTheme LIKE '%$recherche%'";
+            $requete = ///////////////////////////////////////////////////////////////////////////////////////////
+            "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
+            INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
+            INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
+            WHERE libelleTheme LIKE '%$recherche%'";
         }
-		else{
-			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
-			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
-			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
-			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme";
-		}
-		$ex = $db->query($requete);
-		return $ex;
-	}
+        else{
+            $requete = ///////////////////////////////////////////////////////////////////////////////////////////
+            "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
+            INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
+            INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme";
+        }
+        $ex = $db->query($requete);
+        return $ex;
+    }
 
-	public function envoieConnaissance($auteur,$titre,$texte){ //Permet l'envoie des connaissances sur le serveur.
+    public function envoieConnaissance($auteur,$titre,$texte){ //Permet l'envoie des connaissances sur le serveur.
         $db = $this->getBdd();
-		$requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
-		return $ex;
-	}
+        $requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
+        return $ex;
+    }
 
     public function afficheMessageConnaissances(){
         $db = $this->getBdd();

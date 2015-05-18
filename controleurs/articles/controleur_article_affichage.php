@@ -17,6 +17,7 @@ class ControleurAfficheArticle {
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/modeles/article.php';
     $articles = new Article();
     $ex = $articles->afficheMessageConnaissances();
+    $elements = $ex->fetch();
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/contenu/articles/vue_article_affichage.php';
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/gabari.php';
   }

@@ -9,7 +9,7 @@ class Article extends Modele{
         if(isset($_GET['search'])){
             $recherche = $_GET['search'];
 			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
-			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme FROM postconnaissance
+			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
 			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
 			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
 			WHERE texte LIKE '%$recherche%'
@@ -18,14 +18,14 @@ class Article extends Modele{
         elseif(isset($_GET['theme'])){
             $recherche = $_GET['theme'];
 			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
-			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme FROM postconnaissance
+			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
 			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
 			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
 			WHERE libelleTheme LIKE '%$recherche%'";
         }
 		else{
 			$requete = ///////////////////////////////////////////////////////////////////////////////////////////
-			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme FROM postconnaissance
+			"SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
 			INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
 			INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme";
 		}
@@ -42,7 +42,7 @@ class Article extends Modele{
     public function afficheMessageConnaissances(){
         $db = $this->getBdd();
         $requete =
-        "SELECT nomNiveauSecurite, avatar, texte, pseudo, titre, libelleTheme FROM postconnaissance
+        "SELECT nomNiveauSecurite, avatar, texte, pseudo, titre, libelleTheme, postconnaissance.codeUtilisateur FROM postconnaissance
         INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
         INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
         INNER JOIN niveausecurite on niveausecurite.codeNiveauSecurite = utilisateur.codeNiveauSecurite

@@ -23,8 +23,7 @@
 	width:65%;
 	margin-left: auto;
 	margin-right: auto;
-	min-height: 650px;
-	text-align: justify;
+	min-height: 450px;
 }
 
 .liste_article{
@@ -33,11 +32,12 @@
 	padding: 0;
 	padding: 2px;
 	margin-bottom: 5px;
-	width: 25%;
+	width: 32.3%;
 	min-height:140px;
 	display: inline-block;
 	border-radius: 10px;
 	vertical-align: top;  /*Permet d'aligner à la même hauteur plusieurs blocs */
+    word-wrap: break-word;
 }
 
 

@@ -18,7 +18,6 @@
                 Nom : <input type="text" name="nomUtilisateur"></input>
                 <br/><input type="submit">
             </form>
-
             </fieldset>
             <br/>
             <fieldset>
@@ -26,8 +25,6 @@
             <form action="" method="">
                 Nom : <input type="text" name="nomUtilisateur"></input>
                 Groupe : <select name="groupe">
-
-
                 </select>
                  <br/><input type="submit">
             </form>

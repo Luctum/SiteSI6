@@ -83,3 +83,21 @@
     horizontal-align: center;
 
 }
+
+
+/* Messages */
+
+.liste_message{
+    border: 1px #818B8E solid;
+    background-color: #FAFAFA;
+    padding: 0;
+    padding: 2px;
+    margin: auto;
+     margin-bottom: 5px;
+    width: 90%;
+    min-height:110px;
+    display: inline-block;
+    border-radius: 10px;
+    vertical-align: top;  /*Permet d'aligner à la même hauteur plusieurs blocs */
+    word-wrap: break-word;
+}

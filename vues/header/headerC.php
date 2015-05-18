@@ -6,7 +6,7 @@
             <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/controleurs/articles/creation/controleur_creation_article_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/img/icone/university.png"></img> Poster une Connaissance</a>	<br/>
 
 <!-- BOUTON MESSAGE -->
-<a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/controleurs/messages/creation/controleur_creation_message_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/img/icone/ios7-email-outline.png"></img> Messagerie</a>	<br/>
+<a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/controleurs/messages/controleur_message_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/img/icone/ios7-email-outline.png"></img> Messagerie</a>	<br/>
 
 <?php if ($_SESSION['securite'] != 1){?>
 <!-- BOUTON ADMIN -->

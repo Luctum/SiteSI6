@@ -12,7 +12,7 @@
                             <option value="<?php echo $c['libelleTheme'] ?>"><?php echo $c['libelleTheme'] ?></option>
                         <?php } ?>
                     </select>
-                <input type="button" value="Envoyer" onClick="verificationChampsObligatoire(this.form)"/>
+                <input type="button" value="Envoyer" onClick="verificationChampsObligatoireArticle(this.form)"/>
             </form>
         </div>
 </article>

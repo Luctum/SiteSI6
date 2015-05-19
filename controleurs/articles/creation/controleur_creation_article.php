@@ -13,8 +13,8 @@ class ControleurCreationArticle {
             require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerC.php';
             $c_themes = new Theme();
             $theme = $c_themes->afficheTheme();
-            $theme = $theme->fetchAll(PDO::FETCH_ASSOC);
-            ?> <script type="text/javascript" src='<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/lib/verifTitre.js'></script> <?php
+            $theme = $theme->fetchAll(PDO::FETCH_ASSOC); ?>
+            <script type="text/javascript" src='<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/lib/verifForm.js'></script> <?php
             require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/contenu/articles/vue_article_creation.php';
         }
         else{

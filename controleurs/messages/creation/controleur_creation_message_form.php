@@ -10,7 +10,7 @@ class formCreationMessage {
 
     public function creation($destinataire, $texte){
         $this->message->envoieMessage($destinataire, $texte);
-   // header ("Location:  /SITEBOUSILLE/controleurs/messages/controleur_message_clique.php ");
+    header ("Location:  /SITEBOUSILLE/controleurs/messages/controleur_message_clique.php ");
     }
 }
 ?>

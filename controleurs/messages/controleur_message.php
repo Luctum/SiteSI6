@@ -12,7 +12,7 @@ class ControleurMessage {
       else{
           require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerNC.php';
       }
-    require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/modeles/message.php';
+    require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/modeles/messages.php';
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/modeles/themes.php';
 
     $message = new Message();

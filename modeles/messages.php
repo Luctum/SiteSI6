@@ -3,12 +3,17 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/SITEBOUSILLE/modeles/model.php';
 
 class Message extends Modele{
 
-    public function afficheMessage(){ // Vérifie si une recherche à été effectuée, sinon affiche toutes les connaissances.
+    public function afficheMessage(){
         $db = $this->getBdd();
-        $recherche = $_GET['search'];
-        $requete = "SELECT  * FROM envoimessage
-        INNER JOIN utilisateur on envoimessage.codeDestinataire = utilisateur.codeUtilisateur
-        WHERE destinataire LIKE '".$_SESSION['userid']."'";
+
+        //Recupere les messages de l'utilisateur courant
+        $requete = "SELECT *, utilisateur.pseudo as nomExp FROM envoimessage
+        INNER JOIN utilisateur on envoimessage.codeExpediteur = utilisateur.codeUtilisateur
+        WHERE codeDestinataire = ".$_SESSION['userid']."
+        ORDER BY dateheure DESC
+        LIMIT 10";
+        $ex = $db->query($requete);
+        return $ex;
      }
 
     public function envoieMessage($destinataire, $texte){

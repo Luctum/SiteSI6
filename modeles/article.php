@@ -35,14 +35,16 @@ class Article extends Modele{
 
     public function envoieConnaissance($auteur,$titre,$texte){ //Permet l'envoie des connaissances sur le serveur.
         $db = $this->getBdd();
-        $requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
+        $requete = "INSERT INTO postConnaissance
+        SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
         return $ex;
     }
 
     public function afficheMessageConnaissances(){
         $db = $this->getBdd();
         $requete =
-        "SELECT nomNiveauSecurite, avatar, texte, pseudo, titre, libelleTheme, postconnaissance.codeUtilisateur FROM postconnaissance
+        "SELECT nomNiveauSecurite, avatar, texte, pseudo, titre, libelleTheme, postconnaissance.codeUtilisateur
+        FROM postconnaissance
         INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
         INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
         INNER JOIN niveausecurite on niveausecurite.codeNiveauSecurite = utilisateur.codeNiveauSecurite
@@ -53,8 +55,28 @@ class Article extends Modele{
 
     public function setArticle($texte, $auteur, $titre, $theme){
         $db = $this->getBdd();
-        $requete = "INSERT INTO postConnaissance SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=(SELECT codeTheme from theme WHERE libelleTheme = '$theme') ";
-        $ex = $db->query($requete);
+        $requete = "INSERT INTO postConnaissance
+        SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre',
+        codeTheme=(SELECT codeTheme from theme WHERE libelleTheme = '$theme') ";
+        $db->query($requete);
+    }
+
+    public function supprArticle($id){
+        $db = $this->getBdd();
+        $requete = "DELETE FROM postConnaissance WHERE codePostConnaissance = $id";
+        $db->query($requete);
+    }
+
+    public function editArticle($id, $titre, $texte){
+        $db = $this->getBdd();
+        $requete = "UPDATE postConnaissance SET titre='$titre', texte='$texte' WHERE codePostConnaissance = $id";
+        $db->query($requete);
+    }
+
+    public function validerArticle($id){
+        $db = $this->getBdd();
+        $requete = "UPDATE postConnaissance SET accepte= 1 WHERE codePostConnaissance = $id";
+        $db->query($requete);
     }
 }
 ?>

@@ -5,16 +5,29 @@
             <fieldset>
                 <legend>Bannir un utilisateur :</legend>
             <form action="" method="">
-                Nom : <input type="text" name="nomUtilisateur"/><br/>
+                Nom : <input type="text" name="pseudo"/><br/>
                 Date de Fin : <input type="datetime"/><br/>
                 Raison : <input type="datetime"/><br/>
+                <input type="submit">
+            </form>
+            </fieldset>
+            <fieldset>
+                <legend>Modifier le rang d'un utilisateur :</legend>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/controleurs/administration/utilisateurs/rang/controleur_utilisateur_rang_form_clique.php" method="POST">
+                Nom : <input type="text" name="pseudo"/><br/>
+                Rang :
+                <select name="rang">
+                <option value="1">Membre</option>
+                <option value="2">Modérateur</option>
+                <option value="3">Administrateur</option>
+                </select>
                 <input type="submit">
             </form>
             </fieldset>
             <br/>
             <fieldset>
                 <legend>Supprimer un utilisateur :</legend>
-            <form action="<?php $_SERVER['']?>" method="POST">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT']?>/SITEBOUSILLE/controleurs/administration/utilisateurs/suppression/controleur_suppression_utilisateur_form_clique.php" method="POST">
                 Nom : <input type="text" name="pseudo"></input>
                 <br/><input type="submit">
             </form>

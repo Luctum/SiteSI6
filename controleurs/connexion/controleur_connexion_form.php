@@ -10,13 +10,13 @@ class formConnexion {
 
     public function connexion($login, $password){
         session_start();
-        $row = $this->user->getUser($login,$password);
-        $_SESSION['pseudo'] = $row['pseudo'];
-		$_SESSION['avatar'] = $row['avatar'];
-		$_SESSION['login'] = $row['login'];
-        $_SESSION['securite'] = $row['codeNiveauSecurite'];
-		$_SESSION['userid'] = $row['codeUtilisateur'];
-        header ("Location:  /SITEBOUSILLE ");
+            $row = $this->user->getUser($login,$password);
+            $_SESSION['pseudo'] = $row['pseudo'];
+            $_SESSION['avatar'] = $row['avatar'];
+            $_SESSION['login'] = $row['login'];
+            $_SESSION['securite'] = $row['codeNiveauSecurite'];
+            $_SESSION['userid'] = $row['codeUtilisateur'];
+            header ("Location:  /SITEBOUSILLE ");
     }
 }
 ?>

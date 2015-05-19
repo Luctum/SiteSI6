@@ -27,8 +27,26 @@ class Utilisateur extends Modele{
     }
 
     public function supprUser($pseudo){
-        $requete = "DELETE FROM utilisateur WHERE codeUtilisateur = (SELECT codeUtilisateur FROM utilisateur WHERE pseudo LIKE $pseudo)";
+        $requete = "DELETE FROM utilisateur WHERE pseudo LIKE '$pseudo'";
         $ex = $this->getBdd()->query($requete);
+    }
+
+    public function recupInfosUser($pseudo){
+        $requete = "SELECT * FROM utilisateur
+        WHERE pseudo LIKE '$pseudo' OR login LIKE '$pseudo'";
+        $ex = $this->getBdd()->query($requete);
+        $ex = $ex->fetch();
+        return $ex;
+    }
+
+    public function modifRang($pseudo, $rang){
+
+        $ex = $this->recupInfosUser($pseudo);
+        $requete = "UPDATE utilisateur SET codeNiveauSecurite=$rang WHERE pseudo = '$pseudo'";
+
+        if(($rang <= $_SESSION['securite']) && ($ex['codeNiveauSecurite'] < $_SESSION['securite'] )){
+            $ex = $this->getBdd()->query($requete);
+        }
     }
 }
 ?>

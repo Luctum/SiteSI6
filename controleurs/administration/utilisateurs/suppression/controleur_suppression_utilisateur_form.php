@@ -6,12 +6,18 @@ class formSuppressionUtilisateur {
     private $utilisateur;
 
     public function __construct(){
-        $this->article = new Article();
+        $this->utilisateur = new Utilisateur();
     }
 
     public function suppression($pseudo){
-        $this->article->supprUser($pseudo);
-        header ("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
+        if($_SESSION['securite'] == 3 && $_SESSION['pseudo'] != $pseudo){
+        $this->utilisateur->supprUser($pseudo);
+            header ("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
+        }
+        else
+        {
+            header ("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_csslique.php ");
+        }
     }
 
 }

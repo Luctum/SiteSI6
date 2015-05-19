@@ -72,5 +72,11 @@ class Article extends Modele{
         $requete = "UPDATE postConnaissance SET titre='$titre', texte='$texte' WHERE codePostConnaissance = $id";
         $db->query($requete);
     }
+
+    public function validerArticle($id){
+        $db = $this->getBdd();
+        $requete = "UPDATE postConnaissance SET accepte= 1 WHERE codePostConnaissance = $id";
+        $db->query($requete);
+    }
 }
 ?>

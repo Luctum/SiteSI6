@@ -4,7 +4,7 @@
         <div class="barre_modération">
             <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_clique.php">Retour aux Connaissances</a>
             <?php if(isset($_SESSION['securite']) && ($_SESSION['securite'] != 1)){ ?>
-            <a class="yletter" href="#">Valider</a>
+            <a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/validation/controleur_article_validation_form_clique.php?id=<?= $_GET['id']?>">Valider</a>
             <?php } ?>
              <?php if(isset($_SESSION['securite']) && (($_SESSION['securite']) != 1 || ($_SESSION['userid'] == $elements['codeUtilisateur'])) ){ ?>
             <a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/edition/controleur_edition_article_clique.php?id=<?= $_GET['id']?>">Editer</a>

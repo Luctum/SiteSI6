@@ -58,12 +58,18 @@ class Article extends Modele{
         $requete = "INSERT INTO postConnaissance
         SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre',
         codeTheme=(SELECT codeTheme from theme WHERE libelleTheme = '$theme') ";
-        $ex = $db->query($requete);
+        $db->query($requete);
     }
 
     public function supprArticle($id){
         $db = $this->getBdd();
         $requete = "DELETE FROM postConnaissance WHERE codePostConnaissance = $id";
+        $db->query($requete);
+    }
+
+    public function editArticle($id, $titre, $texte){
+        $db = $this->getBdd();
+        $requete = "UPDATE postConnaissance SET titre='$titre', texte='$texte' WHERE codePostConnaissance = $id";
         $db->query($requete);
     }
 }

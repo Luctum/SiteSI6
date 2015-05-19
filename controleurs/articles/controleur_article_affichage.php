@@ -10,10 +10,10 @@ class ControleurAfficheArticle {
 
     if(isset($_SESSION['login'])){
             require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerC.php';
-        }
-        else{
+    }
+    else{
             require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/headerNC.php';
-        }
+    }
 
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/modeles/article.php';
     $articles = new Article();
@@ -24,7 +24,7 @@ class ControleurAfficheArticle {
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/gabari.php';
     }
     else{
-         header ("Location:  404.404.404 La page n'existe pas");
+         echo "La page demandée n'existe pas";
     }
   }
 }

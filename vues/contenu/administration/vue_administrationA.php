@@ -14,8 +14,8 @@
             <br/>
             <fieldset>
                 <legend>Supprimer un utilisateur :</legend>
-            <form action="" method="">
-                Nom : <input type="text" name="nomUtilisateur"></input>
+            <form action="<?php $_SERVER['']?>" method="POST">
+                Nom : <input type="text" name="pseudo"></input>
                 <br/><input type="submit">
             </form>
             </fieldset>

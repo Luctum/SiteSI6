@@ -25,5 +25,10 @@ class Utilisateur extends Modele{
         $requete = "INSERT INTO revocation SET codeUtilisateur=(SELECT codeUtilisateur FROM utilisateur WHERE pseudo = '$pseudo'), dateFinRevocation=DATE_ADD($date, INTERVAL $nbBan DAY) libelle = $raison";
         $ex = $this->getBdd()->query($requete);
     }
+
+    public function supprUser($pseudo){
+        $requete = "DELETE FROM utilisateur WHERE codeUtilisateur = (SELECT codeUtilisateur FROM utilisateur WHERE pseudo LIKE $pseudo");
+        $ex = $this->getBdd()->query($requete);
+    }
 }
 ?>

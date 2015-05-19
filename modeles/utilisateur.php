@@ -27,7 +27,7 @@ class Utilisateur extends Modele{
     }
 
     public function supprUser($pseudo){
-        $requete = "DELETE FROM utilisateur WHERE codeUtilisateur = (SELECT codeUtilisateur FROM utilisateur WHERE pseudo LIKE $pseudo");
+        $requete = "DELETE FROM utilisateur WHERE codeUtilisateur = (SELECT codeUtilisateur FROM utilisateur WHERE pseudo LIKE $pseudo)";
         $ex = $this->getBdd()->query($requete);
     }
 }

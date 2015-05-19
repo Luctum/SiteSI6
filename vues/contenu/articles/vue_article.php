@@ -4,6 +4,7 @@
      <div class="asideArticle">
                 <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_clique.php" method="GET">
                     <select name="theme">
+                        <option value=""> Tous</option>
                         <?php foreach ($theme as $c) { ?>
                             Theme :
                             <option value="<?php echo $c['libelleTheme'] ?>"><?php echo $c['libelleTheme'] ?></option>
@@ -13,7 +14,15 @@
                 </form>
             </div>
         <div class="corps_article">
-
+            <?php
+            if(isset($_GET['theme'])){
+                ?><p>Connaissances : <?= $_GET['theme'] ?>
+            <?php
+            }
+            else{
+               ?> <p>Connaissances </p> <?php
+            }
+            ?>
 <?php 		if(!empty($ex)){
 
             foreach ($rows as $row) { ?>

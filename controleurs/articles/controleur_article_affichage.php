@@ -4,7 +4,8 @@ class ControleurAfficheArticle {
 
   public function afficheMessageArticle() {
 
-  	session_start();
+    session_start();
+    if(isset($_GET['id'])){
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/header/menu.php';
 
     if(isset($_SESSION['login'])){
@@ -18,8 +19,13 @@ class ControleurAfficheArticle {
     $articles = new Article();
     $ex = $articles->afficheMessageConnaissances();
     $elements = $ex->fetch();
+    $id = $_GET['id'];
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/contenu/articles/vue_article_affichage.php';
     require $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/vues/gabari.php';
+    }
+    else{
+         header ("Location:  404.404.404 La page n'existe pas");
+    }
   }
 }
 ?>

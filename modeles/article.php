@@ -9,22 +9,19 @@ class Article extends Modele {
 
         if (isset($_GET['search'])) {
             $recherche = $_GET['search'];
-            $requete = ///////////////////////////////////////////////////////////////////////////////////////////
-            "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
+            $requete = "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, postConnaissance.accepte FROM postconnaissance
             INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
             INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
             WHERE texte LIKE '%$recherche%'
             OR titre LIKE '%$recherche%' ";
         } elseif (isset($_GET['theme'])) {
             $recherche = $_GET['theme'];
-            $requete = ///////////////////////////////////////////////////////////////////////////////////////////
-            "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
+            $requete = "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, postConnaissance.accepte FROM postconnaissance
             INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
             INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme
             WHERE libelleTheme LIKE '%$recherche%'";
         } else {
-            $requete = ///////////////////////////////////////////////////////////////////////////////////////////
-            "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, accepte FROM postconnaissance
+            $requete = "SELECT  titre, codePostConnaissance, avatar,texte, pseudo, titre, libelleTheme, postConnaissance.accepte FROM postconnaissance
             INNER JOIN utilisateur on utilisateur.codeUtilisateur = postconnaissance.codeUtilisateur
             INNER JOIN theme on theme.codeTheme = postconnaissance.codeTheme";
         }
@@ -36,7 +33,7 @@ class Article extends Modele {
         $db = $this->getBdd();
         $requete = "INSERT INTO postConnaissance
         SET texte='$texte', accepte=0, codeUtilisateur=$auteur, titre='$titre', codeTheme=1 ";
-        return $ex;
+        $db->query($requete);
     }
 
     public function afficheMessageConnaissances() {

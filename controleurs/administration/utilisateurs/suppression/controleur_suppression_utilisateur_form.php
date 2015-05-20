@@ -16,7 +16,7 @@ class formSuppressionUtilisateur {
             $this->utilisateur->supprUser($pseudo);
             header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
         } else {
-            header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_csslique.php ");
+            header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
         }
     }
 

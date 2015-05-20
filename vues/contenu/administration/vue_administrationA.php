@@ -46,11 +46,8 @@
         <h3>Gestion Theme</h3>
         <fieldset>
             <legend>Ajouter un theme :</legend>
-            <form action="" method="POST">
-                Nom : <input type="text" name="libelleTheme"></input><br/>
-                Theme Parent : <select name="themeParent">
-
-                </select>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/themes/creation/controleur_creation_theme_form_clique.php" method="POST">
+                Nom : <input type="text" name="libelle"></input>
                 <br/><input type="submit">
             </form>
 
@@ -58,16 +55,43 @@
         <br/>
         <fieldset>
             <legend>Supprimer un theme :</legend>
-            <form action="" method="">
-                <select name="libelleTheme"></select>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/themes/suppression/controleur_suppression_theme_form_clique.php" method="POST">
+                 <select name="theme">
+
+                   <?php foreach($exthemeV as $row){?>
+                    <option value="<?= $row['codeTheme']?>"><?= $row['libelleTheme'] ?></option>
+                  <?php }?>
+
+                </select>
                 <br/><input type="submit">
             </form>
         </fieldset>
         <br/>
         <fieldset>
             <legend>Valider un theme :</legend>
-            <form action="" method="">
-                <select name="libelleTheme"></select>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/themes/validation/controleur_theme_validation_form_clique.php" method="POST">
+                <select name="theme">
+
+                   <?php foreach($exthemeNV as $row1){?>
+                    <option value="<?= $row1['codeTheme']?>"><?= $row1['libelleTheme'] ?></option>
+                  <?php }?>
+
+                </select>
+                <br/><input type="submit"></form>
+        </fieldset>
+        <fieldset>
+            <legend>Définir parenté des themes :</legend>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/themes/parente/controleur_parente_theme_form_clique.php" method="POST">
+                Parent :<select name="theme1">
+                  <?php foreach($exthemeV2 as $row2){?>
+                            <option value="<?= $row2['codeTheme']?>"><?= $row2['libelleTheme'] ?></option>
+                  <?php }?>
+                </select><br/>
+                Enfant :<select name="theme2">
+                   <?php foreach($exthemeV3 as $row3){?>
+                    <option value=" <?= $row3['codeTheme'] ?>"><?= $row3['libelleTheme'] ?></option>
+                  <?php }?>
+                </select>
                 <br/><input type="submit"></form>
         </fieldset>
 

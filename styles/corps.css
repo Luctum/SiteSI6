@@ -33,11 +33,12 @@
     padding: 2px;
     margin-bottom: 5px;
     width: 32.3%;
-    min-height:140px;
+    height:120px;
     display: inline-block;
     border-radius: 10px;
     vertical-align: top;  /*Permet d'aligner à la même hauteur plusieurs blocs */
     word-wrap: break-word;
+    overflow: hidden;
 }
 
 

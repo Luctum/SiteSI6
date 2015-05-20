@@ -1,17 +1,21 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/SITEBOUSILLE/modeles/utilisateur.php';
 
-class formInscription{
+require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+
+class formInscription {
 
     private $user;
-    public function __construct(){
+
+    public function __construct() {
         $this->user = new Utilisateur();
     }
 
-    public function inscription($pseudo, $login, $password, $mail){
+    public function inscription($pseudo, $login, $password, $mail) {
         session_start();
         $row = $this->user->setUser($pseudo, $login, $password, $mail);
-        header ("Location:  /SITEBOUSILLE ");
+        header("Location:  /SITEBOUSILLE ");
     }
+
 }
+
 ?>

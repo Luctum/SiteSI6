@@ -38,9 +38,9 @@ body{
     margin-right: 10px;
     margin-top: 15px;
     transition-property: background, border-radius;
-      transition-duration: 0.3s;
-      transition-timing-function: linear;
-      border-radius: 10px;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    border-radius: 10px;
 
 }
 .bouton:hover{
@@ -55,10 +55,10 @@ body{
     background: #c29b67;
     padding: 15px;
     transition-property: background, border-radius;
-      transition-duration: 0.3s;
-      transition-timing-function: linear;
-      border-radius: 10px;
-      margin-bottom: 5%;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    border-radius: 10px;
+    margin-bottom: 5%;
 }
 .bouton_bas:hover{
     color: #414141;

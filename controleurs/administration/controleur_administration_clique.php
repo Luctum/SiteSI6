@@ -1,5 +1,6 @@
 <?php
-   	require_once $_SERVER['DOCUMENT_ROOT'].'SITEBOUSILLE/controleurs/administration/controleur_administration.php';
-    $ctrlAdmin = new ControleurAdministration();
-    $ctrlAdmin->afficheAdministration();
+
+require_once $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/controleurs/administration/controleur_administration.php';
+$ctrlAdmin = new ControleurAdministration();
+$ctrlAdmin->afficheAdministration();
 ?>

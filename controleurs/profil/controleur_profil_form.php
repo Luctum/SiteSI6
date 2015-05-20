@@ -1,18 +1,23 @@
-<?php session_start();
-require_once $_SERVER['DOCUMENT_ROOT'].'/SITEBOUSILLE/modeles/utilisateur.php';
+<?php
 
-class formModificationProfil{
+session_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+
+class formModificationProfil {
 
     private $user;
-    public function __construct(){
+
+    public function __construct() {
         $this->user = new Utilisateur();
     }
 
-    public function modificationProfil($login, $mail, $image){
+    public function modificationProfil($login, $mail, $image) {
 
         $row = $this->user->modUser($login, $mail, $image);
         $_SESSION['avatar'] = $image;
-        header ("Location:  /SITEBOUSILLE ");
+        header("Location:  /SITEBOUSILLE ");
     }
+
 }
+
 ?>

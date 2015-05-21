@@ -8,10 +8,19 @@ class ControleurAdministration {
 
         require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/menu.php';   // Le test se trouve dans la vue
         if (isset($_SESSION['login'])) {
+
+            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/messages.php';
+            $message = new Message();
+            $newMp = $message->verifMessage();
+
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerC.php';
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/utilisateur.php';
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/themes.php';
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/groupes.php';
+
+
+
+
             $theme = new Theme;
             $exthemeNV = $theme->afficheThemeNonValide();
             $exthemeV = $theme->afficheTheme();

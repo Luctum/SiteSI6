@@ -18,7 +18,6 @@
         <header>
             <?= $header ?>
         </header>
-
         <?= $contenu ?> <!-- Affiche le contenu du site -->
         <footer>
             <div class="fcol">

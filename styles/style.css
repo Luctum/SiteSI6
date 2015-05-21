@@ -70,8 +70,29 @@ body{
 .textimp {display: inline;}
 
 .mini_icone{
+    vertical_align: center;
     height:20px;
     width:20px;
+
+}
+
+.bouton_menu {
+    color: white;
+    margin-right: 1%;
+    display: inline-block;
+    background-color: #c29b67;
+    padding: 6px;
+    transition-property: background, border-radius;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.bouton_menu:hover{
+    background: #a29175;
+    border-radius: 10px;
+
 
 }
 

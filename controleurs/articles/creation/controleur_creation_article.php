@@ -9,6 +9,9 @@ class ControleurCreationArticle {
         require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/themes.php';
 
         if (isset($_SESSION['login'])) {
+            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/messages.php';
+            $message = new Message();
+            $newMp = $message->verifMessage();
 
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerC.php';
             $c_themes = new Theme();

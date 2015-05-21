@@ -3,11 +3,16 @@
 <aside>
     <p class="textimp">Bonjour <span class="yletter"><?= ucfirst($_SESSION['pseudo']) ?></span> passez une agréable visite !</p><br/>
     <!-- BOUTON CONNAISSANCE -->
-    <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/creation/controleur_creation_article_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/img/icone/university.png"></img> Poster une Connaissance</a>	<br/>
-
+    <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/creation/controleur_creation_article_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/img/icone/university.png"></img> Poster une Connaissance</a>/
+    <!-- BOUTON ANNONCE -->
+    <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/annonces/creation/controleur_creation_annonce_clique.php">Poster une Annonce</a>	<br/>
+<?php if(isset($newMp) && $newMp == 1){?>
+    <!-- BOUTON MESSAGE -->
+    <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/messages/controleur_message_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/img/icone/ios7-email-outline.png"></img> Messagerie (NOUVEAU)</a>	<br/>
+<?php }else{?>
     <!-- BOUTON MESSAGE -->
     <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/messages/controleur_message_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/img/icone/ios7-email-outline.png"></img> Messagerie</a>	<br/>
-
+<?php }?>
     <?php if ($_SESSION['securite'] != 1) { ?>
         <!-- BOUTON ADMIN -->
         <a class="bouton_profil" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php"><img class="mini_icone" src="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/img/icone/paper-airplane.png"></img> Administration</a><br/>

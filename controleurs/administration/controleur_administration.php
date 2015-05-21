@@ -20,6 +20,8 @@ class ControleurAdministration {
 
             $groupe = new Groupe;
             $exgroupe = $groupe->afficheGroupe();
+            $exgroupe2 = $groupe->afficheGroupe();
+            $exgroupe3 = $groupe->afficheGroupe();
 
         } else {
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerNC.php';
@@ -30,7 +32,7 @@ class ControleurAdministration {
         } elseif ($_SESSION['securite'] == 3) {
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/contenu/administration/vue_administrationA.php';
         } else {
-            $contenu = "Vous n'avez pas le droit d'être ici.";
+            header("Location:  /SITEBOUSILLE/ ");
         }
         require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/gabari.php';
     }

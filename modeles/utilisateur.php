@@ -47,9 +47,20 @@ class Utilisateur extends Modele {
         $ex = $this->recupInfosUser($pseudo);
         $requete = "UPDATE utilisateur SET codeNiveauSecurite=$rang WHERE pseudo = '$pseudo'";
 
-        if (($rang <= $_SESSION['securite']) && ($ex['codeNiveauSecurite'] < $_SESSION['securite'] )) {
-            $ex = $this->getBdd()->query($requete);
+        if (($rang <= $_SESSION['securite']) && ($ex['codeNiveauSecurite'] < $_SESSION['securite'] ))
+        $ex = $this->getBdd()->query($requete);
         }
+
+    public function setGroupeUser($pseudo, $groupe) {
+        $requete = "INSERT INTO groupeutilisateur SET codeUtilisateur=(SELECT codeUtilisateur FROM utilisateur WHERE pseudo = '$pseudo') , codeGroupe = $groupe ";
+        $ex = $this->getBdd()->query($requete);
+    }
+
+    public function supprGroupeUser($pseudo, $groupe) {
+        $ex = $this->recupInfosUser($pseudo);
+        $codeUser = $ex['codeUtilisateur'];
+        $requete = "DELETE FROM groupeutilisateur WHERE codeUtilisateur = $codeUser AND codeGroupe = $groupe";
+        $ex = $this->getBdd()->query($requete);
     }
 
 }

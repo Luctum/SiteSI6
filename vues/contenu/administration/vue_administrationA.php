@@ -11,6 +11,7 @@
                 <input type="submit">
             </form>
         </fieldset>
+         <br/>
         <fieldset>
             <legend>Modifier le rang d'un utilisateur :</legend>
             <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/utilisateurs/rang/controleur_utilisateur_rang_form_clique.php" method="POST">
@@ -35,9 +36,25 @@
         <br/>
         <fieldset>
             <legend>Ajouter un utilisateur à un groupe :</legend>
-            <form action="" method="">
-                Nom : <input type="text" name="nomUtilisateur"></input>
-                Groupe : <select name="groupe">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/utilisateurs/groupe/controleur_ajout_groupe_form_clique.php" method="POST">
+                Nom : <input type="text" name="pseudo"></input>
+                Groupe :<select name="groupe">
+                   <?php foreach($exgroupe2 as $row5){?>
+                    <option value=" <?= $row5['codeGroupe'] ?>"><?= $row5['nomGroupe'] ?></option>
+                  <?php }?>
+                </select>
+                <br/><input type="submit">
+            </form>
+        </fieldset>
+         <br/>
+        <fieldset>
+            <legend>Retirer un utilisateur d'un groupe :</legend>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/utilisateurs/groupe/controleur_suppr_groupe_form_clique.php" method="POST">
+                Nom : <input type="text" name="pseudo"></input>
+                Groupe :<select name="groupe">
+                   <?php foreach($exgroupe3 as $row6){?>
+                    <option value=" <?= $row6['codeGroupe'] ?>"><?= $row6['nomGroupe'] ?></option>
+                  <?php }?>
                 </select>
                 <br/><input type="submit">
             </form>
@@ -79,6 +96,7 @@
                 </select>
                 <br/><input type="submit"></form>
         </fieldset>
+         <br/>
         <fieldset>
             <legend>Définir parenté des themes :</legend>
             <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/themes/parente/controleur_parente_theme_form_clique.php" method="POST">

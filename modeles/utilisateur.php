@@ -19,17 +19,19 @@ class Utilisateur extends Modele {
 
     public function modUser($login, $mail, $image) {
         $requete = "UPDATE utilisateur SET mail='$mail', avatar='$image' WHERE codeUtilisateur = $login";
-        $ex = $this->getBdd()->query($requete);
+        $this->getBdd()->query($requete);
     }
 
-    public function banUser($pseudo, $raison, $date) {
-        $requete = "INSERT INTO revocation SET codeUtilisateur=(SELECT codeUtilisateur FROM utilisateur WHERE pseudo = '$pseudo'), dateFinRevocation=DATE_ADD($date, INTERVAL $nbBan DAY) libelle = $raison";
-        $ex = $this->getBdd()->query($requete);
+    public function banUser($pseudo, $date, $raison) {
+        $date2 = new DateTime($date);
+        $date = $date2->format('Y-m-d h:i:s');
+        $requete = "INSERT INTO revocation SET codeUtilisateur=(SELECT codeUtilisateur FROM utilisateur WHERE pseudo = '$pseudo'), dateFinRevocation='$date', libelle = '$raison' ";
+        $this->getBdd()->query($requete);
     }
 
     public function supprUser($pseudo) {
         $requete = "DELETE FROM utilisateur WHERE pseudo LIKE '$pseudo'";
-        $ex = $this->getBdd()->query($requete);
+        $this->getBdd()->query($requete);
     }
 
     public function recupInfosUser($pseudo) {

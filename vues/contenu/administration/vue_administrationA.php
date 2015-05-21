@@ -4,10 +4,10 @@
         <h3>Gestion Utilisateur</h3>
         <fieldset>
             <legend>Bannir un utilisateur :</legend>
-            <form action="" method="">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/utilisateurs/revocation/controleur_revocation_utilisateur_form_clique.php" method="POST">
                 Nom : <input type="text" name="pseudo"/><br/>
-                Date de Fin : <input type="datetime"/><br/>
-                Raison : <input type="datetime"/><br/>
+                Date de Fin : <input type="text" placeholder="2015-01-29 10:00:12" name="date"/>(aaaa-mm-jj hh:mm:ss)<br/>
+                Raison : <input type="datetime" name="raison"/><br/>
                 <input type="submit">
             </form>
         </fieldset>

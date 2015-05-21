@@ -7,7 +7,7 @@
         <a class="a_menu" href="selection.php">Annonces</a>
     </span>
     <form method="GET" class="recherche" action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_clique.php">
-        <input class="search"type="text" name="search" placeholder="Rechercher sur Cognitio...">
+        <input class="search"type="text" name="search" placeholder="Rechercher une connaissance sur Cognitio...">
         <input type="submit">
     </form>
     <a class="a_menu2" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/profil/controleur_profil_clique.php">Mon Profil <span class="yletter">(<?= $_SESSION['pseudo'] ?>)<span></a>

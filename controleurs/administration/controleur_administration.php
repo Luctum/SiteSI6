@@ -11,11 +11,15 @@ class ControleurAdministration {
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerC.php';
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/utilisateur.php';
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/themes.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/groupes.php';
             $theme = new Theme;
             $exthemeNV = $theme->afficheThemeNonValide();
             $exthemeV = $theme->afficheTheme();
             $exthemeV2 = $theme->afficheTheme();
             $exthemeV3 = $theme->afficheTheme();
+
+            $groupe = new Groupe;
+            $exgroupe = $groupe->afficheGroupe();
 
         } else {
             require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerNC.php';

@@ -98,14 +98,19 @@
         <h3>Gestion des Groupes</h3>
         <fieldset>
             <legend>Ajouter un groupe :</legend>
-            <form action="" method=""> Nom : <input type="text" name="nomGroupe"/><br/>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/groupes/creation/controleur_creation_groupe_form_clique.php" method="POST">
+               Nom : <input type="text" name="groupe"/><br/>
                 <input type="submit"></form>
         </fieldset>
         <br/>
         <fieldset>
             <legend>Supprimer un groupe :</legend>
-            <form action="" method="">
-                Nom : <select name="libelleGroupe"></select>
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/groupes/suppression/controleur_suppression_groupe_form_clique.php" method="POST">
+               Groupe :<select name="groupe">
+                   <?php foreach($exgroupe as $row4){?>
+                    <option value=" <?= $row4['codeGroupe'] ?>"><?= $row4['nomGroupe'] ?></option>
+                  <?php }?>
+                </select>
                 <br/><input type="submit"></form>
         </fieldset>
 

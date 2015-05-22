@@ -2,7 +2,7 @@
 
 <article>
     <div class="asideArticle">
-        <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_clique.php" method="GET">
+        <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/articles/controleur_article_clique.php" method="GET">
             Themes :<br/>
             <select name="theme">
                 <option value=""> Tous</option>
@@ -38,7 +38,7 @@
                         <?php if ($row['accepte'] == 0) { ?>
                             <i><p>En attente de validation</p></i>
                         <?php } ?>
-                        <h4><a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_affichage_clique.php?id=<?= $row['codePostConnaissance'] ?>"><?= $row['titre'] ?></a></h4>
+                        <h4><a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/articles/controleur_article_affichage_clique.php?id=<?= $row['codePostConnaissance'] ?>"><?= $row['titre'] ?></a></h4>
                         <h5>Ecrit par : <?= $row['pseudo'] ?></h5>
                         <p><?= substr($row['texte'], 0, 85) ?>...</p>
 
@@ -51,7 +51,7 @@
                         <?php if ($row['accepte'] == 0) { ?>
                             <i><p>En attente de validation</p></i>
                         <?php } ?>
-                        <h4><a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_affichage_clique.php?id=<?= $row['codePostConnaissance'] ?>"><?= $row['titre'] ?></a></h4>
+                        <h4><a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/articles/controleur_article_affichage_clique.php?id=<?= $row['codePostConnaissance'] ?>"><?= $row['titre'] ?></a></h4>
                         <h5>Ecrit par : <?= $row['pseudo'] ?></h5>
                         <p><?= substr($row['texte'], 0, 85) ?>...</p>
 

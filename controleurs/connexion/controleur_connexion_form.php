@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/utilisateur.php';
 
 class formConnexion {
 
@@ -22,11 +22,11 @@ class formConnexion {
             $_SESSION['login'] = $row['login'];
             $_SESSION['securite'] = $row['codeNiveauSecurite'];
             $_SESSION['userid'] = $row['codeUtilisateur'];
-            header("Location:  /SITEBOUSILLE/controleurs/articles/controleur_article_clique.php ");
+            header("Location:  /cognitio/controleurs/articles/controleur_article_clique.php ");
         }
         elseif($date < $finban){
             echo "Impossible de se connecter: <br/>Vous etes bannis jusqu'au ",$ban['dateFinRevocation']  ," pour motif : ", $ban['libelle'] ;
-            header("Refresh: 5; url= /SITEBOUSILLE/controleurs/accueil/controleur_accueil_clique.php ", true, 303);
+            header("Refresh: 5; url= /cognitio/controleurs/accueil/controleur_accueil_clique.php ", true, 303);
             echo " <br/> Redirection...";
 
         }

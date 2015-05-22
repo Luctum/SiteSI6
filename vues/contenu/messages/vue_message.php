@@ -4,7 +4,7 @@
     <div class="corps_article">
 
         <h2>Messageries :</h2>
-        <a class="bouton_menu" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/messages/creation/controleur_creation_message_clique.php">Ecrire un message</a>
+        <a class="bouton_menu" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/messages/creation/controleur_creation_message_clique.php">Ecrire un message</a>
         <br/>
         <br/>
         <?php
@@ -19,7 +19,7 @@
                     Destinataire : <i><?= $_SESSION['pseudo'] ?></i>|
                     Date : <i><?= $row['dateHeure']?></i><br/>
                     Message :<p><?= substr($row['texte'], 0, 250) ?></p>
-                    <a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/messages/suppression/controleur_suppression_message_form_clique.php?date= <?=$row['dateHeure']?>&expediteur=<?= $row['codeExpediteur'] ?>">Supprimer</a>
+                    <a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/messages/suppression/controleur_suppression_message_form_clique.php?date= <?=$row['dateHeure']?>&expediteur=<?= $row['codeExpediteur'] ?>">Supprimer</a>
                     </aside>
                 </div>
                 <?php

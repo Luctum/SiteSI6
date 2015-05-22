@@ -5,7 +5,7 @@
 
         <fieldset>
             <legend>Ajouter un utilisateur à un groupe :</legend>
-            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/utilisateurs/groupe/controleur_ajout_groupe_form_clique.php" method="POST">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/administration/utilisateurs/groupe/controleur_ajout_groupe_form_clique.php" method="POST">
                 Nom : <input type="text" name="pseudo"></input>
                 Groupe :<select name="groupe">
                    <?php foreach($exgroupe2 as $row5){?>
@@ -18,7 +18,7 @@
          <br/>
         <fieldset>
             <legend>Retirer un utilisateur d'un groupe :</legend>
-            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/utilisateurs/groupe/controleur_suppr_groupe_form_clique.php" method="POST">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/administration/utilisateurs/groupe/controleur_suppr_groupe_form_clique.php" method="POST">
                 Nom : <input type="text" name="pseudo"></input>
                 Groupe :<select name="groupe">
                    <?php foreach($exgroupe3 as $row6){?>
@@ -32,7 +32,7 @@
         <h3>Gestion Theme</h3>
         <fieldset>
             <legend>Ajouter un theme :</legend>
-            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/themes/creation/controleur_creation_theme_form_clique.php" method="POST">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/administration/themes/creation/controleur_creation_theme_form_clique.php" method="POST">
                 Nom : <input type="text" name="libelle"></input>
                 <br/><input type="submit">
             </form>
@@ -42,14 +42,14 @@
         <h3>Gestion des Groupes</h3>
         <fieldset>
             <legend>Ajouter un groupe :</legend>
-            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/groupes/creation/controleur_creation_groupe_form_clique.php" method="POST">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/administration/groupes/creation/controleur_creation_groupe_form_clique.php" method="POST">
                Nom : <input type="text" name="groupe"/><br/>
                 <input type="submit"></form>
         </fieldset>
         <br/>
         <fieldset>
             <legend>Supprimer un groupe :</legend>
-            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/administration/groupes/suppression/controleur_suppression_groupe_form_clique.php" method="POST">
+            <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/administration/groupes/suppression/controleur_suppression_groupe_form_clique.php" method="POST">
                Groupe :<select name="groupe">
                    <?php foreach($exgroupe as $row4){?>
                     <option value=" <?= $row4['codeGroupe'] ?>"><?= $row4['nomGroupe'] ?></option>

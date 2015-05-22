@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/utilisateur.php';
 
 class formRevocationUtilisateur {
 
@@ -13,7 +13,7 @@ class formRevocationUtilisateur {
 
     public function revocation($pseudo, $date, $raison) {
         $this->utilisateur->banUser($pseudo, $date, $raison);
-        header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php");
+        header("Location:  /cognitio/controleurs/administration/controleur_administration_clique.php");
     }
 
 }

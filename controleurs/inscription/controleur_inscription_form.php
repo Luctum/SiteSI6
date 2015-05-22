@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/utilisateur.php';
 
 class formInscription {
 
@@ -13,7 +13,7 @@ class formInscription {
     public function inscription($pseudo, $login, $password, $mail) {
         session_start();
         $row = $this->user->setUser($pseudo, $login, $password, $mail);
-        header("Location:  /SITEBOUSILLE ");
+        header("Location:  /cognitio ");
     }
 
 }

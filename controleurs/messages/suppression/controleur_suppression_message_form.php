@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/messages.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/messages.php';
 
 class formSuppressionMessage {
 
@@ -13,7 +13,7 @@ class formSuppressionMessage {
 
     public function suppression($destinataire , $expediteur, $date) {
         $this->message->supprMessage($destinataire , $expediteur, $date);
-        header("Location:  /SITEBOUSILLE/controleurs/messages/controleur_message_clique.php ");
+        header("Location:  /cognitio/controleurs/messages/controleur_message_clique.php ");
     }
 }
 

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/article.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/article.php';
 
 class formValidationArticle {
 
@@ -13,7 +13,7 @@ class formValidationArticle {
 
     public function validation($id) {
         $this->article->validerArticle($id);
-        header("Location:  /SITEBOUSILLE/controleurs/articles/controleur_article_affichage_clique.php?id=$id ");
+        header("Location:  /cognitio/controleurs/articles/controleur_article_affichage_clique.php?id=$id ");
     }
 
 }

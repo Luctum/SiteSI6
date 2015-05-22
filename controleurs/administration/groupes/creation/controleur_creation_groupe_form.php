@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/groupes.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/groupes.php';
 
 class formCreationGroupe {
 
@@ -13,7 +13,7 @@ class formCreationGroupe {
 
     public function creation($groupe) {
         $this->groupe->setGroupe($groupe);
-        header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
+        header("Location:  /cognitio/controleurs/administration/controleur_administration_clique.php ");
     }
 
 }

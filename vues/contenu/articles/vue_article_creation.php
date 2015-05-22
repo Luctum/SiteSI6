@@ -3,7 +3,7 @@
 <article>
     <div class="corps_article">
         <h2>Poster une nouvelle connaissance :</h2>
-        <form method="POST" action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/creation/controleur_creation_article_form_clique.php">
+        <form method="POST" action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/articles/creation/controleur_creation_article_form_clique.php">
             Titre :<br/> <input type="text" name="titre"></input> (Obligatoire) <br/>
             Article :<br/> <textarea class="champtexte" name="texte"></textarea><br/>
             Theme : <br/>

@@ -6,24 +6,24 @@ class ControleurAfficheArticle {
 
         session_start();
         if (!empty($_GET['id'])) {
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/menu.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/header/menu.php';
 
             if (isset($_SESSION['login'])) {
-                require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerC.php';
+                require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/header/headerC.php';
             } else {
-                require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerNC.php';
+                require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/header/headerNC.php';
             }
 
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/article.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/modeles/article.php';
             $articles = new Article();
             $ex = $articles->afficheMessageConnaissances();
             $elements = $ex->fetch();
             $id = $_GET['id'];
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/contenu/articles/vue_article_affichage.php';
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/gabari.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/contenu/articles/vue_article_affichage.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/gabari.php';
         } else {
             echo "La page demandée n'existe pas";
-            header("Location:  /SITEBOUSILLE/controleurs/articles/controleur_article_clique.php ");
+            header("Location:  /cognitio/controleurs/articles/controleur_article_clique.php ");
         }
     }
 

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/utilisateur.php';
 
 class formModificationRang {
 
@@ -13,7 +13,7 @@ class formModificationRang {
 
     public function rang($pseudo, $rang) {
         $this->utilisateur->modifRang($pseudo, $rang);
-        header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php");
+        header("Location:  /cognitio/controleurs/administration/controleur_administration_clique.php");
     }
 
 }

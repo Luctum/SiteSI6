@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/annonces.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/annonces.php';
 
 class formEditionAnnonce {
 
@@ -13,7 +13,7 @@ class formEditionAnnonce {
 
     public function edition($id, $titre, $texte) {
         $this->annonce->editAnnonce($id, $titre, $texte);
-        header("Location:  /SITEBOUSILLE/controleurs/annonces/controleur_annonce_clique.php ");
+        header("Location:  /cognitio/controleurs/annonces/controleur_annonce_clique.php ");
     }
 
 }

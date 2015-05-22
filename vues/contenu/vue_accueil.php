@@ -7,6 +7,6 @@
             Chaque connaissance est vérifiée puis validée par un modérateur, ce qui fait que Cognitio est une source plus fiable qu’une grande <br/>
             majorité de ce que l’on trouve sur le net !</p>
     </div>
-    <a class="bouton_bas" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/articles/controleur_article_clique.php">ACCEDER AUX CONNAISSANCES</a>
+    <a class="bouton_bas" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/articles/controleur_article_clique.php">ACCEDER AUX CONNAISSANCES</a>
 </article>
 <?php $contenu = ob_get_clean(); ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/utilisateur.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . 'cognitio/modeles/utilisateur.php';
 
 class formAjoutGroupe{
 
@@ -13,7 +13,7 @@ class formAjoutGroupe{
 
     public function ajout($utilisateur, $groupe){
         $this->utilisateur->setGroupeUser($utilisateur, $groupe);
-        header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
+        header("Location:  /cognitio/controleurs/administration/controleur_administration_clique.php ");
     }
 
 

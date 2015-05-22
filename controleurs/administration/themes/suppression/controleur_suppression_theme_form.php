@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/themes.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/themes.php';
 
 class formSuppressionTheme {
 
@@ -13,7 +13,7 @@ class formSuppressionTheme {
 
     public function suppression($theme) {
         $this->theme->supprTheme($theme);
-        header("Location:  /SITEBOUSILLE/controleurs/administration/controleur_administration_clique.php ");
+        header("Location:  /cognitio/controleurs/administration/controleur_administration_clique.php ");
     }
 
 }

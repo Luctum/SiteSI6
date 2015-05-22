@@ -2,7 +2,7 @@
 
 <article class="accueil_corps">
     <h2><span class="yletter">Inscription</span></h2>
-    <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/inscription/controleur_inscription_form_clique.php" method="POST">
+    <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/inscription/controleur_inscription_form_clique.php" method="POST">
         Login : <input type="text" name="login"></input> <br/>
         Pseudo: <input type="text" name="pseudo"></input> <br/>
         Password : <input type="password" name="password"></input> <br/>

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/utilisateur.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/utilisateur.php';
 
 class formModificationProfil {
 
@@ -15,7 +15,7 @@ class formModificationProfil {
 
         $row = $this->user->modUser($login, $mail, $image);
         $_SESSION['avatar'] = $image;
-        header("Location:  /SITEBOUSILLE ");
+        header("Location:  /cognitio ");
     }
 
 }

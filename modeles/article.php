@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/model.php';
 
 class Article extends Modele {
 

@@ -6,17 +6,17 @@ class ControleurAdministration {
         session_start();
 
 
-        require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/menu.php';   // Le test se trouve dans la vue
+        require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/header/menu.php';   // Le test se trouve dans la vue
         if (isset($_SESSION['login'])) {
 
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/messages.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/modeles/messages.php';
             $message = new Message();
             $newMp = $message->verifMessage();
 
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerC.php';
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/utilisateur.php';
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/themes.php';
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/modeles/groupes.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/header/headerC.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/modeles/utilisateur.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/modeles/themes.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/modeles/groupes.php';
 
 
 
@@ -33,17 +33,17 @@ class ControleurAdministration {
             $exgroupe3 = $groupe->afficheGroupe();
 
         } else {
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/header/headerNC.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/header/headerNC.php';
         }
         if ($_SESSION['securite'] == 2) {
 
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/contenu/administration/vue_administrationM.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/contenu/administration/vue_administrationM.php';
         } elseif ($_SESSION['securite'] == 3) {
-            require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/contenu/administration/vue_administrationA.php';
+            require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/contenu/administration/vue_administrationA.php';
         } else {
-            header("Location:  /SITEBOUSILLE/ ");
+            header("Location:  /cognitio/ ");
         }
-        require $_SERVER['DOCUMENT_ROOT'] . 'SITEBOUSILLE/vues/gabari.php';
+        require $_SERVER['DOCUMENT_ROOT'] . 'cognitio/vues/gabari.php';
     }
 
 }

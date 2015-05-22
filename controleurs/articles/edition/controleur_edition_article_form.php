@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/SITEBOUSILLE/modeles/article.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cognitio/modeles/article.php';
 
 class formEditionArticle {
 
@@ -13,7 +13,7 @@ class formEditionArticle {
 
     public function edition($id, $titre, $texte) {
         $this->article->editArticle($id, $titre, $texte);
-        header("Location:  /SITEBOUSILLE/controleurs/articles/controleur_article_clique.php ");
+        header("Location:  /cognitio/controleurs/articles/controleur_article_clique.php ");
     }
 
 }

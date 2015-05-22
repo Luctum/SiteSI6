@@ -32,7 +32,7 @@
                 <p>18 Rue Haute Chiffolière<br/>
                     53000 Laval, FRANCE<br/>
 
-                    <a href="#" class="bouton">Envoyer un mail</a></p>
+                    <a href="mailto:hugo.palla@gmail.com" class="bouton">Envoyer un mail</a></p>
             </div>
         </footer>
     </body>

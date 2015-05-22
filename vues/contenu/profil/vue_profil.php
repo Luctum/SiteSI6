@@ -14,7 +14,6 @@
             <input type="submit"></input>
 
         </form>
-        <?= $_SESSION['userid'] ?>
     </div>
 </article>
 

@@ -14,7 +14,6 @@
             <p><b><?= ucfirst($elements['pseudo']) ?> </b></p>
             <p><?= ucfirst($elements['nomNiveauSecurite']) ?></p><br/><br/>
             Contact : <br/>
-            <a href="mailto:<?php  ?>">Mail</a><br/>
             <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/cognitio/controleurs/messages/creation/controleur_creation_message_clique.php?destinataire=<?= $elements['pseudo']?> ">Message Privé</a>
             <br/>
         </div>

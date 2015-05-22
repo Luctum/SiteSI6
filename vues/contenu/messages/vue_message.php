@@ -19,13 +19,11 @@
                     Destinataire : <i><?= $_SESSION['pseudo'] ?></i>|
                     Date : <i><?= $row['dateHeure']?></i><br/>
                     Message :<p><?= substr($row['texte'], 0, 250) ?></p>
-                    <a class="yletter">Supprimer</a>
+                    <a class="yletter" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/SITEBOUSILLE/controleurs/messages/suppression/controleur_suppression_message_form_clique.php?date= <?=$row['dateHeure']?>&expediteur=<?= $row['codeExpediteur'] ?>">Supprimer</a>
                     </aside>
                 </div>
                 <?php
             }
-        } else {
-            echo "Pas de nouveaux messages";
         }
         ?>
     </div>

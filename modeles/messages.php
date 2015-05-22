@@ -47,6 +47,12 @@ class Message extends Modele {
         return $newmp;
     }
 
+    public function supprMessage($destinataire , $expediteur, $date) {
+        $db = $this->getBdd();
+        $requete = "DELETE FROM envoimessage WHERE codeDestinataire =$destinataire AND codeExpediteur = $expediteur AND dateHeure = '$date' ";
+        $db->query($requete);
+    }
+
 }
 
 ?>

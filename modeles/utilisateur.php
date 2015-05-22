@@ -29,6 +29,13 @@ class Utilisateur extends Modele {
         $this->getBdd()->query($requete);
     }
 
+    public function recupBan($login){
+        $requete = "SELECT * FROM revocation WHERE codeUtilisateur = (SELECT codeUtilisateur FROM  utilisateur WHERE login LIKE '$login')";
+        $ex = $this->getBdd()->query($requete);
+        $ex = $ex->fetch();
+        return $ex;
+    }
+
     public function supprUser($pseudo) {
         $requete = "DELETE FROM utilisateur WHERE pseudo LIKE '$pseudo'";
         $this->getBdd()->query($requete);

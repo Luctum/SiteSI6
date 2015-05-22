@@ -7,8 +7,10 @@
             <select name="theme">
                 <option value=""> Tous</option>
                 <?php foreach ($theme as $c) { ?>
-                    Theme :
+                    <?php if($c['accepte'] == 1){ ?>
                     <option value="<?php echo $c['libelleTheme'] ?>"><?php echo $c['libelleTheme'] ?></option>
+                    <?php } ?>
+
                 <?php } ?>
             </select>
             <input type="submit"/>
